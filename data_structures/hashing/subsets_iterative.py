@@ -55,6 +55,7 @@ def generate_subsets(nums: list[int]) -> list[list[int]]:
     def backtrack(start: int, current: list[int]) -> None:
         # Add the current subset to the result list
         result.append(current[:])
+        print(f"current: {current}")
         
         for i in range(start, len(nums)):
             # Include nums[i] in the current subset
@@ -67,7 +68,7 @@ def generate_subsets(nums: list[int]) -> list[list[int]]:
     result: list[list[int]] = []
     backtrack(0, [])
     return result
-
+print(generate_subsets([1, 2, 3]))  # Output: [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
 
 def search(k: int, n: int, subset: list[Any], all_subsets: list[list[Any]]):
     """
