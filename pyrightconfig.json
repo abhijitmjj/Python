@@ -1,0 +1,7 @@
+{
+    "typeCheckingMode ": "strict",
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true
+}

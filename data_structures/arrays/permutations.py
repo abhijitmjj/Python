@@ -40,9 +40,25 @@ def permute_backtrack(nums: list[int]) -> list[list[int]]:
     return output
 
 
+def permute_interleave(nums: list[int]) -> list[list[int]]:
+    """
+    Return all permutations of the given list.
+
+    Logic: For each number in the list, we can insert it at any position in the permutations of the remaining numbers
+
+    >>> permute_interleave([1, 2, 3])
+    [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+    """
+    if not nums:
+        return [[]]
+    return [
+        [n] + p for i, n in enumerate(nums) for p in permute_interleave(nums[:i] + nums[i + 1 :])
+    ]
+
 if __name__ == "__main__":
     import doctest
 
     result = permute_backtrack([1, 2, 3])
     print(result)
+    print(permute_interleave([1, 2, 3]))
     doctest.testmod()

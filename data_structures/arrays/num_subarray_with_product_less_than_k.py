@@ -1,4 +1,4 @@
-def num_subarrays_with_product_less_than_k(arr, k):
+def num_subarrays_with_product_less_than_k(arr: list[int], k: int) -> int:
     if k <= 1:
         return 0
 
