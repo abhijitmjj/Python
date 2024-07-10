@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import List
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        counts:dict[int, int] = defaultdict(int)
+        counts = defaultdict(int)
         counts[0] = 1
         ans = curr = 0
 
